@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+</head>
+<style>
+    /* Header styles */
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 1em;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin: 0 1em;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+  
+  /* Main styles */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  li1 {
+    flex-basis: calc(23.33% - 16px);
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+</style>
+<body>
+  <header>
+    <nav>
+        <ul>
+            <li><a href="http://127.0.0.1:5502/traffic/home.html">Home</a></li>
+            <li><a href="http://127.0.0.1:5502/traffic/traffUpdate.html">Traffic Updates</a></li>
+            <li><a href="http://127.0.0.1:5502/traffic/map.html">Traffic Maps</a></li>
+            <li><a href="http://127.0.0.1:5502/traffic/alert.html">Traffic Alerts</a></li>
+            <li><a href="http://127.0.0.1:5502/traffic/about.html">About</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Us</h2>
+      <p>This project is presented by Purvashi Shah, Tanya Shah, Naina Sharma and Smithi Sureshan.</p>
+    </section>
+
+    <section>
+      <h2>Our Team</h2>
+      <ul>
+        <li1>
+          <img src="https://i.ibb.co/fdBPkpN/Purvashi1.jpg" alt="Purvashi1" border="0">
+          <h3>Purvashi Shah</h3>
+          <p>Roll no. 01</p>
+        </li1>
+        <li1>
+          <img src="https://i.ibb.co/pKhSK7G/Whats-App-Image-2023-05-01-at-15-17-31.jpg" alt="Whats-App-Image-2023-05-01-at-15-17-31" border="0">
+          <h3>Tanya Shah</h3>
+          <p>Roll no. 02</p>
+        </li1>
+        <li1>
+          <img src="https://i.ibb.co/3c4R6gx/naina.jpg" alt="naina" border="0">
+          <h3>Naina Sharma</h3>
+          <p>Roll no. 08</p>
+        </li1>
+        <li1>
+          <img src="https://i.ibb.co/VJPv8Fx/Whats-App-Image-2023-05-01-at-15-19-59.jpg" alt="Whats-App-Image-2023-05-01-at-15-19-59" border="0">
+            <h3>Smithi Sureshan</h3>
+            <p>Roll no. 29</p>
+          </li1>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+// Add a class to the active link in the navigation
+const currentLocation = location.href;
+const navLinks = document.querySelectorAll("nav ul li a");
+const menuToggle = document.querySelector(".menu-toggle");
+const mainNav = document.querySelector(".main-nav");
+
+for (let i = 0; i < navLinks.length; i++) {
+  if (navLinks[i].href === currentLocation) {
+    navLinks[i].className = "active";
+  }
+}
+
+// Toggle the mobile menu
+menuToggle.addEventListener("click", function () {
+  mainNav.classList.toggle("show");
+});
+
+// Smooth scrolling on anchor links
+const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+for (let anchorLink of anchorLinks) {
+  anchorLink.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
+    const targetPosition = targetElement.offsetTop;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+
+    mainNav.classList.remove("show");
+  });
+}
+
+  </script>
+</body>
+</html>

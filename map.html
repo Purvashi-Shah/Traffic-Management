@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traffic Maps</title>
+</head>
+<style>
+    /* Global styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin: 0 1em;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h2 {
+    margin-top: 2em;
+}
+
+section {
+    margin-bottom: 3em;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+</style>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="http://127.0.0.1:5502/traffic/home.html">Home</a></li>
+                <li><a href="http://127.0.0.1:5502/traffic/traffUpdate.html">Traffic Updates</a></li>
+                <li><a href="http://127.0.0.1:5502/traffic/map.html">Traffic Maps</a></li>
+                <li><a href="http://127.0.0.1:5502/traffic/alert.html">Traffic Alerts</a></li>
+                <li><a href="http://127.0.0.1:5502/traffic/about.html">About</a></li>
+            </ul>
+        </nav>
+        <h1>Traffic Maps</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Live Traffic Map</h2>
+            <iframe src="https://wego.here.com/directions/mix//Kandivali,-Station-Road,-Mumbai-400067-MH:356te7v3-12a49b59e6b34b75bc524da56f3296e2?map=19.20388,72.85147,15,normal" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </section>
+        <section>
+            <h2>Live Traffic Cameras</h2>
+            <ul>
+                <li><a href="#">Camera 1</a></li>
+                <li><a href="#">Camera 2</a></li>
+                <li><a href="#">Camera 3</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Traffic Maps</p>
+    </footer>
+    <script>
+        // Get the live traffic cameras element
+const liveTrafficCameras = document.querySelectorAll("section:nth-child(2) li a");
+
+// Add a click event listener to each live traffic camera link
+liveTrafficCameras.forEach(function(link) {
+    link.addEventListener("click", function(event) {
+        // Prevent the default link behavior
+        event.preventDefault();
+
+        // Get the camera number from the link text
+        const cameraNumber = link.textContent.split(" ")[1];
+
+        // Display the live camera feed
+        alert(`Live camera feed for camera ${cameraNumber} is not available at this time.`);
+    });
+});
+
+    </script>
+</body>
+</html>

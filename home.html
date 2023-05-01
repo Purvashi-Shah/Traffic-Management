@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traffic Management Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Global styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin: 0 1em;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h2 {
+    margin-top: 2em;
+}
+
+section {
+    margin-bottom: 3em;
+}
+
+iframe {
+    border: 0;
+    width: 100%;
+    height: 400px;
+}
+
+form label, form input, form button {
+    display: block;
+}
+
+form input[type="email"], form button[type="submit"] {
+    margin-top: 0.5em;
+    padding: 0.5em;
+}
+
+form button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 1em 0;
+    }
+}
+</style>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="http://127.0.0.1:5502/traffic/home.html">Home</a></li>
+                <li><a href="http://127.0.0.1:5502/traffic/traffUpdate.html">Traffic Updates</a></li>
+                <li><a href="http://127.0.0.1:5502/traffic/map.html">Traffic Maps</a></li>
+                <li><a href="http://127.0.0.1:5502/traffic/alert.html">Traffic Alerts</a></li>
+                <li><a href="http://127.0.0.1:5502/traffic/about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h1>Welcome to our Traffic Management Website</h1>
+            <p>Get real-time traffic updates, traffic maps, and traffic alerts to help you manage your commute more efficiently.</p>
+        </section>
+        
+        <section>
+            <h2>Real-Time Traffic Updates</h2>
+            <p>View live updates on traffic conditions for different routes and locations.</p>
+            <div id="traffic-updates">
+                <ul>
+                    <li><a href="Teen Hath Naka: The city’s busiest junction, may have just earned the dubious distinction of being the world’s worst congested intersection.">Heavy Traffic</a></li>
+                    <li><a href="Goregaon Bridge — Motorists in the western suburbs probably drive through the city’s worst traffic nightmares every day. Getting from one end of Veer Savarkar flyover to the other end takes a good 30 to 40 minutes.">Moderate Traffic</a></li>
+                    <li><a href="Hindu Hrudaysamrat Balasaheb Thackeray Maharashtra Samruddhi Mahamarg">Clear Traffic</a></li>
+                </ul>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Traffic Maps</h2>
+            <p>View interactive maps that show traffic conditions, congestion, and alternate routes.</p>
+            <div id="traffic-maps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770731.3338570716!2d72.49965029537635!3d19.08219721576032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c630e38d9dd9%3A0xf503f676c34d16d3!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1650257914829!5m2!1sen!2sin
+" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Traffic Alerts</h2>
+            <p>Get notified about traffic incidents, road closures, and other important information.</p>
+            <form>
+                <label for="email">Enter your email to receive traffic alerts:</label>
+                <input type="email" id="email" name="email" placeholder="example@gmail.com">
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 TCET PBL copyrights. All rights reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

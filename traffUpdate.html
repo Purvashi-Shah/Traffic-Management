@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traffic Updates</title>
+</head>
+<style>
+    /* Global styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin: 0 1em;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h2 {
+    margin-top: 2em;
+}
+
+section {
+    margin-bottom: 3em;
+}
+
+form label, form input, form button {
+    display: block;
+}
+
+form input[type="email"], form button[type="submit"] {
+    margin-top: 0.5em;
+    padding: 0.5em;
+}
+
+form button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+</style>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="http://127.0.0.1:5502/traffic/home.html">Home</a></li>
+                <li><a href="http://127.0.0.1:5502/traffic/traffUpdate.html">Traffic Updates</a></li>
+                <li><a href="http://127.0.0.1:5502/traffic/map.html">Traffic Maps</a></li>
+                <li><a href="http://127.0.0.1:5502/traffic/alert.html">Traffic Alerts</a></li>
+                <li><a href="http://127.0.0.1:5502/traffic/about.html">About</a></li>
+            </ul>
+        </nav>
+        <h1>Traffic Updates</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Current Traffic Conditions</h2>
+            <p>Here are the current traffic conditions:</p>
+            <ul>
+                <li><a href="#" id="traffic-updates">Accident on I-95 at Exit 23</a></li>
+                <li><a href="#" id="traffic-updates">Construction on Route 1 at mile marker 15</a></li>
+                <li><a href="#" id="traffic-updates">Road closure on Route 50 between Route 301 and Route 13</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Subscribe to Traffic Alerts</h2>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Traffic Updates</p>
+    </footer>
+    <script>
+        // Get the traffic updates element
+const trafficUpdates = document.getElementById("traffic-updates");
+
+// Add a click event listener to the traffic updates element
+trafficUpdates.addEventListener("click", function(event) {
+    // Prevent the default link behavior
+    event.preventDefault();
+
+    // Get the clicked link
+    const link = event.target;
+
+    // Get the href attribute of the clicked link
+    const href = link.getAttribute("href");
+
+    // Display the traffic update message
+    alert(`Traffic update: ${link.textContent}\nMore info: ${href}`);
+});
+
+
+    </script>
+</body>
+</html>
